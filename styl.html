@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang = 'pl'>
+<head>
+<title>Pierwsza strona w jQuery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(function () {
+    $('button:contains(\'Niebieski\')').click(function () {
+        $('#first').addClass('niebieski');
+    });
+    $('button:contains(\'Czarny\')').click(function () {
+        $('#first').removeClass('niebieski');
+    });
+    $('button:contains(\'nadany\')').click(function () {
+        $('#toggle').toggleClass('niebieski');
+    });
+    $('button:contains(\'zmiana\')').click(function () {
+        $('table tr:odd').toggleClass('niebieski');
+    });
+
+    $('#list').addClass('koloruj');
+});
+</script>
+<style> 
+.niebieski {
+    background: Blue;
+    font-size: xx-large;
+    }
+.koloruj {
+    background: green;
+    font-size: xx-large;
+    }
+</style>
+</head>
+
+<body>
+    <table>
+        <tr><td>Poniedziałek</td></tr>
+        <tr><td>Wtorek</td></tr>
+        <tr><td>Środa</td></tr>
+        <tr><td>Czwartek</td></tr>
+        <tr><td>Piątek</td></tr>
+        <tr><td>Sobota</td></tr>
+        <tr><td>Niedziela</td></tr>
+        </table>
+        <div><button>Niebieski</button><button>Czarny</button><span id="first">Tekst testowy do zmiany koloru</span></div>
+        <div><button>który zostanie nadany przez funkcję.</button><span id="toggle">Zmiana przez przełączanie klas.</span></div>
+        <div><button>zmiana tla </button></div>
+        
+        <div>
+            <h3>Lista </h3>
+            <ol id = "list">
+                <li>numer 1</li>
+                <li>numer 2</li>
+                <li>numer 3</li>
+            </ol>
+        </div>
+</body>
+</html>
